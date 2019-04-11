@@ -17,7 +17,7 @@ class App < Sinatra::Base
 
     @repeated_phrase = []
     @num.times {@repeated_phrase << params[:phrase]}
-    
+
     "#{@repeated_phrase.join}"
   end
 
