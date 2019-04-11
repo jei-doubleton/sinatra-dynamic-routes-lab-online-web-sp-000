@@ -8,16 +8,16 @@ class App < Sinatra::Base
   end
 
   get '/square/:number' do
-    @num = params[:number].to_i
-    "#{@num * @num}"
+    # @num = params[:number].to_i
+    "#{params[:number].to_i ** 2}"
   end
 
   get '/say/:number/:phrase' do
-    # @phrase = params[:phrase]
     @num = params[:number].to_i
 
     @repeated_phrase = []
     @num.times {@repeated_phrase << params[:phrase]}
+    
     "#{@repeated_phrase.join}"
   end
 
