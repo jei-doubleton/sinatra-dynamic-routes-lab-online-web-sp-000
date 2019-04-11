@@ -11,12 +11,20 @@ class App < Sinatra::Base
   end
 
   get '/say/:number/:phrase' do
-    @num = params[:number].to_i
+    @answer = ''
+    
+    params[:number].to_s.times do
+      answer += params[:phrase]
+    end
 
-    @repeated_phrase = []
-    @num.times {@repeated_phrase << params[:phrase]}
+    "#{@answer}"
 
-    "#{@repeated_phrase.join}"
+    # @num = params[:number].to_i
+    # 
+    # @repeated_phrase = []
+    # @num.times {@repeated_phrase << params[:phrase]}
+    # 
+    # "#{@repeated_phrase.join}"
   end
 
   get '/say/:word1/:word2/:word3/:word4/:word5' do
