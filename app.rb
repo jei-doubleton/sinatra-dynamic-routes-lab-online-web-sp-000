@@ -13,10 +13,11 @@ class App < Sinatra::Base
   end
 
   get '/say/:number/:phrase' do
-    @phrase = params[:phrase]
+    # @phrase = params[:phrase]
     @num = params[:number].to_i
+
     @repeated_phrase = []
-    @num.times {@repeated_phrase << @phrase}
+    @num.times {@repeated_phrase << params[:phrase]}
     "#{@repeated_phrase.join}"
   end
 
@@ -43,7 +44,7 @@ class App < Sinatra::Base
     when "multiply"
       @result = @num1 * @num2
     end
-    
+
     "#{@result}"
   end
 
