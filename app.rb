@@ -12,7 +12,7 @@ class App < Sinatra::Base
 
   get '/say/:number/:phrase' do
     @answer = ''
-    
+
     params[:number].to_s.times do
       answer += params[:phrase]
     end
@@ -20,10 +20,10 @@ class App < Sinatra::Base
     "#{@answer}"
 
     # @num = params[:number].to_i
-    # 
+    #
     # @repeated_phrase = []
     # @num.times {@repeated_phrase << params[:phrase]}
-    # 
+    #
     # "#{@repeated_phrase.join}"
   end
 
